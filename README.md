@@ -12,3 +12,4 @@ An app similar to Slack.
 
 ---
 ## License and Copyright
+Open Source
