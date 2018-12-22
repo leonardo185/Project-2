@@ -11,3 +11,13 @@ socketio = SocketIO(app)
 @app.route("/")
 def index():
     return render_template('index.html')
+
+#Login
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
+#Register
+@app.route("/register", methods=['GET','POST'])
+def register():
+    return render_template('register.html')
