@@ -40,9 +40,19 @@ def index():
 #Login
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+
     return render_template('login.html')
 
 #Register
 @app.route("/register", methods=['GET','POST'])
 def register():
-    return render_template('register.html')
+    if request.method == 'POST':
+        Username = request.form.get('username')
+        Email = request.form.get('email')
+        Password = request.form.get('password')
+        Password_again = request.form.get('password_again')
+
+        db.execute("INSERT INTO users (username, email, password) VALUES (:Username, :Email, :Password)", {"Username": Username, "Email":Email, "Password": Password})
+        db.commit()
+        return render_template("index.html")
+    return render_template("register.html")
