@@ -26,7 +26,7 @@ Session(app)
 
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
-db = scoped_se ssion(sessionmaker(bind=engine))
+db = scoped_session(sessionmaker(bind=engine))
 
 
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
