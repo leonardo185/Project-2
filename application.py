@@ -37,11 +37,48 @@ socketio = SocketIO(app)
 def index():
     return render_template('index.html')
 
+@app.route("/chat")
+def chat():
+    return render_template('chat.html')
+
 #Login
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    #Clear all existing sessions.
+    session.clear()
 
+    if request.method == 'POST':
+        Email = request.form.get('email')
+        Password = request.form.get('password')
+
+        rows = db.execute("SELECT * FROM users WHERE email=:Email", {"Email":Email}).fetchone()
+        print(type(rows))
+
+        if rows == None:
+            return render_template('login.html', error = "Invalid Username or Password")
+        elif len(rows) != 1 and Password != rows[3]:
+            return render_template('login.html', error = "Invalid Username or Password")
+
+        session['logged_in'] = True
+        session['user_id'] = rows[0]
+        print(session['user_id'])
+        return redirect(url_for("chat"))
     return render_template('login.html')
+
+#logout
+@app.route("/logout")
+def logout():
+    session.clear()
+    return render_template('index.html')
+
+
+
+
+
+
+
+
+
 
 #Register
 @app.route("/register", methods=['GET','POST'])
