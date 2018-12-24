@@ -8,12 +8,12 @@ An app similar to Slack.
 
 ---
 ## Installation
-Python and Flask
+Python and Flask:
 
 First, make sure you install a copy of Python. For this course, you should be using Python version 3.6 or higher.
 You’ll also need to install pip. If you downloaded Python from Python’s website, you likely already have pip installed (you can check by running pip in a terminal window). If you don’t have it installed, be sure to install it before moving on!
 
-To try running your first Flask application
+To try running your first Flask application:
 
 Download the project1 distribution directory by cloning https://github.com/leonardo185/Project-2.git.
 In a terminal window, navigate into your project directory.
