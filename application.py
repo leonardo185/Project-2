@@ -32,11 +32,12 @@ db = scoped_session(sessionmaker(bind=engine))
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
-
+#Index
 @app.route("/")
 def index():
     return render_template('index.html')
 
+#Chat
 @app.route("/chat")
 def chat():
     return render_template('chat.html')
@@ -70,15 +71,6 @@ def login():
 def logout():
     session.clear()
     return render_template('index.html')
-
-
-
-
-
-
-
-
-
 
 #Register
 @app.route("/register", methods=['GET','POST'])
