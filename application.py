@@ -12,7 +12,6 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-
 app = Flask(__name__)
 
 # Check for environment variable
