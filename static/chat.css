@@ -40,18 +40,27 @@ p {
 nav ul {
 	list-style-type: none;
 	margin: 0;
-	margin-left: 20px;
+	margin-left: 30px;
 	padding: 0;
 }
 
-h3{
+h4{
 	color: white;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 nav ul a {
 	color: #958796;
 	text-decoration: none;
+	font-weight: bolder;
+}
+
+.btn-outline-primary{
+
+	margin-left: 10px;
+
+	border-left-width: 1px;
 }
 
 /*IE6 fix*/

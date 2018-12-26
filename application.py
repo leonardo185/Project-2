@@ -61,6 +61,7 @@ def login():
 
         session['logged_in'] = True
         session['user_id'] = rows[0]
+        session['user_name'] = rows[1]
         print(session['user_id'])
         return redirect(url_for("chat"))
     return render_template('login.html')
