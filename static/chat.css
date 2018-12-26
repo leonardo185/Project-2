@@ -16,7 +16,7 @@ body{
 	width: 230px; /* Width of navigation frame */
 	height: 100%;
 	overflow: hidden; /* Disables scrollbars on the navigation frame. To enable scrollbars, change "hidden" to "scroll" */
-	background: #eee;
+	background: #77496a;
 }
 
 main{
@@ -40,11 +40,17 @@ p {
 nav ul {
 	list-style-type: none;
 	margin: 0;
+	margin-left: 20px;
 	padding: 0;
 }
 
+h3{
+	color: white;
+	text-decoration: none;
+}
+
 nav ul a {
-	color: darkgreen;
+	color: #958796;
 	text-decoration: none;
 }
 
