@@ -10,51 +10,105 @@
 
 {% block body %}
 
-  <main>
-    <div class="innertube">
 
-      <div class="container">
-        <h2>Channel Name</h2>
-        <button type="button" class="btn btn-outline-dark"><i class="far fa-smile-beam">1</i></button> <!-- People in the channel -->
-        <button type="button" class="btn btn-outline-primary">Invite <i class="far fa-plus-square"></i></button>
-        <hr>
-        <p>Use the "media-left" class to left-align a media object. Text that should appear next to the image, is placed inside a container with class="media-body".</p>
-        <p>Tip: Use the "media-right" class to right-align the media object.</p><br>
 
-        <!-- Left-aligned media object -->
-        <div class="media">
-          <div class="media-left">
-            <img src="img_avatar1.png" class="media-object" style="width:60px">
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Left-aligned</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
+
+
+<main>
+  <div class="innertube">
+    <h2>Channel Name</h2>
+    <button type="button" class="btn btn-outline-dark"><i class="far fa-smile-beam">1</i></button> <!-- People in the channel -->
+    <button type="button" class="btn btn-outline-primary">Invite <i class="far fa-plus-square"></i></button>
+    <hr>
+
+    <div class="chat-body">
+      <!--Chat Messages.-->
+      <div>
+        <div class="container">
+           <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.IysY4WC3y-hRlNWdCK0PbAHaFj%26pid%3D15.1&f=1" alt="Avatar">
+           <p>Hello. How are you today?</p>
+           <span class="time-right">11:00</span>
         </div>
-        <hr>
 
-        <!-- Right-aligned media object -->
-        <div class="media">
-          <div class="media-body">
-            <h4 class="media-heading">Right-aligned</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="media-right">
-            <img src="img_avatar1.png" class="media-object" style="width:60px">
-          </div>
+        <div class="container darker">
+           <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.g8t2TrKuE--_z8FHkdFS2gHaIS%26pid%3D15.1&f=1" alt="Avatar" class="right">
+           <p>Hey! I'm fine. Thanks for asking!</p>
+           <span class="time-left">11:01</span>
         </div>
+
+        <div class="container">
+           <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.IysY4WC3y-hRlNWdCK0PbAHaFj%26pid%3D15.1&f=1" alt="Avatar">
+           <p>Sweet! So, what do you wanna do today?</p>
+           <span class="time-right">11:02</span>
+        </div>
+
+        <div class="container darker">
+          <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.g8t2TrKuE--_z8FHkdFS2gHaIS%26pid%3D15.1&f=1" alt="Avatar" class="right">
+          <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+          <span class="time-left">11:05</span>
+        </div>
+
+        <!-- Chat box -->
+        <div class="container">
+          <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.IysY4WC3y-hRlNWdCK0PbAHaFj%26pid%3D15.1&f=1" alt="Avatar" style="width:100%;">
+          <p>Hello. How are you today?</p>
+          <span class="time-right">11:00</span>
+        </div>
+
+        <div class="container darker">
+          <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.g8t2TrKuE--_z8FHkdFS2gHaIS%26pid%3D15.1&f=1" alt="Avatar" class="right" style="width:100%;">
+          <p>Hey! I'm fine. Thanks for asking!</p>
+          <span class="time-left">11:01</span>
+        </div>
+
+        <div class="container">
+          <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.IysY4WC3y-hRlNWdCK0PbAHaFj%26pid%3D15.1&f=1" alt="Avatar" style="width:100%;">
+          <p>Sweet! So, what do you wanna do today?</p>
+          <span class="time-right">11:02</span>
+        </div>
+
       </div>
-
     </div>
-  </main>
+
+  </div>
+
+
+</main>
+
+<!-- Input text -->
+<div class="test fixed-bottom">
+    <div class="input-group mb-3" >
+      <input type="text" class="form-control" placeholder= "💬 Type message here..." aria-label="Type " aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" id="button-addon2">Send</button>
+      </div>
+    </div>
+</div>
+
+
+
+
 
   <nav id="nav">
     <div class="innertube">
       <h4 style="margin-left: 17px;">{{session.user_name}}</h4>
+      <button id = "channel-button" type="button" class="btn btn-dark">Channels <i class="far fa-plus-square"></i></button>
+
       <ul style="margin-top: 19px;">
-        <li><button type="button" class="btn btn-dark">Channels <i class="far fa-plus-square"></i></button></li>
+        <div class="vertical-menu">
+          <li><button type="button" class="btn btn-light">Channel 1</button></li>
+          <li><button type="button" class="btn btn-light">Channel 2</button></li>
+          <li><button type="button" class="btn btn-light">Channel 3</button></li>
+          <li><button type="button" class="btn btn-light">Channel 4</button></li>
+          <li><button type="button" class="btn btn-light">Channel 5</button></li>
+
+        </div>
       </ul>
     </div>
   </nav>
+
+
+
+
 
 {% endblock %}
