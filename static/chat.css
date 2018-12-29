@@ -19,11 +19,11 @@ body{
 	background: #2873ba;
 }
 
-main{
-	position: fixed;
+.main_body{
+	position: absolute;
 	height: 84%;
 	top: 60px;
-	
+
 	left: 230px; /* Set this to the width of the navigation frame */
 	right: 0;
 	bottom: 0;
