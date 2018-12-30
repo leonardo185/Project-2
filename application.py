@@ -4,6 +4,9 @@ import requests
 #Flask
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request
 
+#Flask Wrappers
+from functools import wraps
+
 #Socket.io
 from flask_socketio import SocketIO, emit
 
@@ -31,6 +34,17 @@ db = scoped_session(sessionmaker(bind=engine))
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash("You need to login first.")
+            return render_template('login.html')
+    return wrap
+
+
 #Index
 @app.route("/")
 def index():
@@ -38,6 +52,7 @@ def index():
 
 #Chat
 @app.route("/chat")
+@login_required
 def chat():
     return render_template('chat.html')
 
@@ -64,10 +79,12 @@ def login():
         session['user_name'] = rows[1]
         print(session['user_id'])
         return redirect(url_for("chat"))
+
     return render_template('login.html')
 
 #logout
 @app.route("/logout")
+@login_required
 def logout():
     session.clear()
     return render_template('index.html')
@@ -83,5 +100,7 @@ def register():
 
         db.execute("INSERT INTO users (username, email, password) VALUES (:Username, :Email, :Password)", {"Username": Username, "Email":Email, "Password": Password})
         db.commit()
+
+        flash("You are now register in.")
         return render_template("index.html")
     return render_template("register.html")

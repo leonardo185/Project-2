@@ -19,6 +19,21 @@
   </head>
   <body>
     {% include 'includes/_navbar.html' %}
+
+
+    <div class="container-fluid" >
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show "  role="alert" style="top:100px">
+              <button type="button" class="close" name="button" data-dismiss="alert" aria-lable="close" ><span aria-hidden="true" >&times;</span></button>
+                {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+
     {% block body %}{% endblock %}
 
 
