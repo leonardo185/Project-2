@@ -65,7 +65,7 @@ def login():
     if request.method == 'POST':
         Email = request.form.get('email')
         Password = request.form.get('password')
-
+            
         rows = db.execute("SELECT * FROM users WHERE email=:Email", {"Email":Email}).fetchone()
         print(type(rows))
 

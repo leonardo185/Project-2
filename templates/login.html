@@ -11,8 +11,8 @@
 
 {% block body %}
 
-<div class="container" style="margin-top: 200px;">
-  <center>
+<div align="center" class="container-fluid" style="margin-top: 200px;">
+
 
 
 
@@ -20,11 +20,14 @@
 
           <h1 class="card-title">LOGIN</h1>
 
-          {% if error %}
-          <div class="alert alert-danger" role="alert">
-            Incorrect Username or Password.
+          <div class="form-group" style="width: 30rem; ">
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show " role="alert">
+              <button type="button" name="button" class="close" name="button" data-dismiss="alert" aria-lable="close"><span aria-hidden="true" >&times;</span></button>
+              Incorrect Username or Password.
+            </div>
+            {% endif %}
           </div>
-          {% endif %}
 
           <div class="form-group">
               <input type="text" class="form-control"name="email" value="" placeholder="Email" style="width: 30rem;" required>
@@ -37,7 +40,7 @@
           <button type="submit" class="btn btn-primary" name="button">Login</button>
 
     </form>
-  </center>
+
 </div>
 
 {% endblock %}
