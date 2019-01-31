@@ -54,7 +54,7 @@ def index():
 @app.route("/chat")
 @login_required
 def chat():
-    todo:
+    #todo:
     return render_template('chat.html')
 
 #Login
